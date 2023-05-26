@@ -1,0 +1,21 @@
+{
+  "name": "openwa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "openwa.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "MIT",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "google-play-scraper": "^9.1.1",
+    "mysql": "^2.18.1",
+    "openai": "^3.1.0",
+    "pkg": "^5.8.0",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.20.0",
+    "xlsx": "^0.18.5"
+  }
+}
