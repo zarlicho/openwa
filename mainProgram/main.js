@@ -5,7 +5,7 @@ const { getSystemErrorMap } = require('util');
 const { Configuration, OpenAIApi } = require("openai");
 const { url } = require('inspector');
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: process.env.OPENAIKEY,
 });
 const openai = new OpenAIApi(configuration);
 const client = new Client({
