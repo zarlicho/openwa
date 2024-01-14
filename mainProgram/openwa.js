@@ -2,12 +2,11 @@ const qrcode = require('qrcode-terminal');
 const fs = require("fs")
 const { Client, LegacySessionAuth, LocalAuth, MessageMedia} = require('whatsapp-web.js');
 const { getSystemErrorMap } = require('util');
-const { Configuration, OpenAIApi } = require("openai");
+const { OpenAI, OpenAIApi } = require("openai");
 const { url } = require('inspector');
-const configuration = new Configuration({
-  apiKey: process.env.OPENAIKEY,
+const openai = new OpenAI({
+    apiKey: "your api key" // This is also the default, can be omitted
 });
-const openai = new OpenAIApi(configuration);
 const client = new Client({
      authStrategy: new LocalAuth({
           clientId: "client-one" //Un identificador(Sugiero que no lo modifiques)
@@ -30,6 +29,10 @@ client.on('ready', () => {
 });
 
 function man(){
+    client.on('message_create', async (message) => { 
+        console.log(message)
+        // message.reply(`${message.body}!`)
+    });
     client.on('message', async message => {
         if(message.body.includes('/ask')) {
             let text = message.body.split('/ask')[1];
