@@ -1,9 +1,6 @@
 const qrcode = require('qrcode-terminal');
-const fs = require("fs")
 const { Client, LegacySessionAuth, LocalAuth, MessageMedia} = require('whatsapp-web.js');
-const { getSystemErrorMap } = require('util');
-const { OpenAI, OpenAIApi } = require("openai");
-const { url } = require('inspector');
+const { OpenAI} = require("openai");
 const openai = new OpenAI({
     apiKey: "your api key" // This is also the default, can be omitted
 });
