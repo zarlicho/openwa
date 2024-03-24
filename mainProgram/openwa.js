@@ -50,8 +50,7 @@ function man(){
         }
         else if(message.body.includes('/draw')) {
             let text = message.body.split('/draw')[1];
-            var qst = `Q: ${text}\nA:`;
-            const response = await openai.createImage({
+            const response = await openai.images.generate({
                 prompt: text,
                 n: 1,
                 size: '512x512'
