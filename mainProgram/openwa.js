@@ -37,8 +37,8 @@ function man(){
         if(message.body.includes('/ask')) {
             let text = message.body.split('/ask')[1];
             var qst = `Q: ${text}\nA:`;
-            const response = await openai.createCompletion({
-                model: "text-davinci-003",
+            const response = await openai.chat.completions.create({
+                model: "gpt-3.5-turbo",
                 prompt: qst,
                 temperature: 0,
                 max_tokens: 300,
